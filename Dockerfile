@@ -29,6 +29,7 @@ ADD conf/my.cnf /etc/mysql/my.cnf
 EXPOSE 3306
 ADD scripts /scripts
 RUN chmod +x /scripts/start.sh
+RUN chmod 644 /etc/mysql/my.cnf
 RUN touch /firstrun
 
 # Expose our data, log, and configuration directories.
