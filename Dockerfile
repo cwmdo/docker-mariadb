@@ -1,6 +1,6 @@
 #MariaDB (https://mariadb.org/)
 
-FROM ubuntu:14.04
+FROM phusion/baseimage:0.9.10
 MAINTAINER Ryan Seto <w.dahlstrom@me.com>
 
 # Ensure UTF-8
@@ -36,4 +36,4 @@ RUN touch /firstrun
 VOLUME ["/data", "/var/log/mysql", "/etc/mysql"]
 
 # Use baseimage-docker's init system.
-CMD ["/scripts/start.sh"]
+CMD ["/sbin/my_init", "--", "/scripts/start.sh"]
