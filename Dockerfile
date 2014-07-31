@@ -6,9 +6,6 @@ MAINTAINER William Dahlstrom <w.dahlstrom@me.com>
 # Generate UTF-8 lang files just in case
 RUN locale-gen en_US.UTF-8
 
-# Set the correct frontend mode
-RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
-
 # Update repositories, install prerequisites and add a new one
 RUN apt-get -qq update
 RUN apt-get -qqy install --no-install-recommends software-properties-common python-software-properties
@@ -17,7 +14,7 @@ RUN add-apt-repository 'deb http://ftp.ddg.lth.se/mariadb/repo/10.0/ubuntu trust
 RUN apt-get -qq update
 
 # Install MariaDB
-RUN apt-get -qqy install --force-yes mariadb-server
+RUN apt-get -y install mariadb-server
 
 # Clean up apt when we're done
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
