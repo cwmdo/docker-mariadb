@@ -6,6 +6,9 @@ MAINTAINER William Dahlstrom <w.dahlstrom@me.com>
 # Generate UTF-8 lang files just in case
 RUN locale-gen en_US.UTF-8
 
+# Disable baseimage's automatic generation of SSH keys
+RUN rm -rf /etc/service/sshd /etc/my_init.d/00_regen_ssh_host_keys.sh
+
 # Update repositories, install prerequisites and add a new one
 RUN apt-get -qq update
 RUN apt-get -qqy install --no-install-recommends software-properties-common python-software-properties
@@ -13,8 +16,9 @@ RUN apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a
 RUN add-apt-repository 'deb http://ftp.ddg.lth.se/mariadb/repo/10.0/ubuntu trusty main'
 RUN apt-get -qq update
 
-# Install MariaDB
-RUN apt-get -y install mariadb-server
+# Install MariaDB & inotify-tools
+RUN apt-get -y install mariadb-server || true
+RUN apt-get -y install inotify-tools
 
 # Clean up apt when we're done
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
