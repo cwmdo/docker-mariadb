@@ -1,10 +1,13 @@
 #MariaDB (https://mariadb.org/)
 
-FROM phusion/baseimage:0.9.10
+FROM phusion/baseimage:0.9.12
 MAINTAINER William Dahlstrom <w.dahlstrom@me.com>
 
 # Generate UTF-8 lang files just in case
 RUN locale-gen en_US.UTF-8
+
+# Set the correct frontend mode
+RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 
 # Update repositories, install prerequisites and add a new one
 RUN apt-get -qq update
