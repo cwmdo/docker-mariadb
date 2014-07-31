@@ -35,7 +35,7 @@ RUN touch /firstrun
 EXPOSE 3306
 
 # Exposeour data and log direcotires
-VOLUME ["/data", "/var/log/mysql"]
+VOLUME ["/data", "/var/log"]
 
 # Use baseimage-docker's init system
 CMD ["/sbin/my_init", "--", "/scripts/start.sh"]
