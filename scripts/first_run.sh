@@ -14,8 +14,9 @@ pre_start_action() {
       cp -R /var/lib/mysql/* $DATA_DIR
   fi
 
-  # Ensure mysql owns the DATA_DIR
+  # Ensure mysql owns the DATA_DIR & logs dir
   chown -R mysql $DATA_DIR
+  chown -R mysql /logs
   chown root $DATA_DIR/debian*.flag
 }
 

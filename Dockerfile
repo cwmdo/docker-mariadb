@@ -17,7 +17,7 @@ RUN add-apt-repository 'deb http://ftp.ddg.lth.se/mariadb/repo/10.0/ubuntu trust
 RUN apt-get -qq update
 
 # Install MariaDB & inotify-tools
-RUN apt-get -y install mariadb-server || true
+RUN apt-get -y install mariadb-server || :
 RUN apt-get -y install inotify-tools
 
 # Clean up apt when we're done
