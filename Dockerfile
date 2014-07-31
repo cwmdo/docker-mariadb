@@ -15,7 +15,7 @@ RUN apt-get -qq update
 
 # Install MariaDB
 RUN apt-get -qq update
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -qqy --force-yes mariadb-server
+DEBIAN_FRONTEND=noninteractive apt-get install -y mariadb-server
 
 # Install other tools.
 RUN apt-get -qqy install pwgen inotify-tools
