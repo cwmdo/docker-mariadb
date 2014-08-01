@@ -34,7 +34,7 @@ For this container to run at all, these environment variables need to be defined
 
 The final result looks something like this:
 
-```docker run -d --name="mysql-prod-0" -p 3307:3306 -v /home/deploy/db/mysql-prod-0:/data -v /logs -e USER="chuck" -e PASS="intersect" heyimwill/docker-mysql```
+```docker run -d --name="mysql-prod-0" -p 3307:3306 -v /home/deploy/db/mysql-prod-0:/data -v /home/deploy/logs/mysql-prod-0:/logs -e USER="chuck" -e PASS="intersect" heyimwill/docker-mysql```
 
 ## Linking
 If you want to link this to another container, simply add ```--link mysql-prod-0:db``` to the docker command of the container you wish to link with. If you're setting up a PHP environment, you should definitely check this out: http://github.com/heyimwill/docker-php5-nginx
