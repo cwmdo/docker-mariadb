@@ -12,6 +12,7 @@ Pretty much what the title says, but with some minor additions. This container w
 
 ## Quick start script
 If you just want to get things up and running, simply use the db-up.sh script in this repo. Make sure you adjust the settings at the beginning of the file to suit your system, then simply run it like so, username/password will set the login info for your mysql user:
+
 ```./db-up.sh username password```
 
 That's it, you're all set!
