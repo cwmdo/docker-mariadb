@@ -33,6 +33,7 @@ docker build -t mariadb-prod-0 github.com/heyimwill/docker-mariadb
 For this container to run at all, these environment variables need to be defined: USER, PASS. It expects you to mount your data directory to ```/data```. If you would like easy access to the logs, you can mount ```/logs```.
 
 The final result looks something like this:
+
 ```docker run -d --name="mysql-prod-0" -p 3307:3306 -v /home/deploy/db/mysql-prod-0:/data -v /logs -e USER="chuck" -e PASS="intersect" heyimwill/docker-mysql```
 
 ## Linking
