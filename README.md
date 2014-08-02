@@ -22,11 +22,7 @@ That's it, you're all set!
 ## Setup
 Not a fan of taking shortcuts, eh? Lets do it the good ol' way.
 
-Grab the latest version of this image from the Docker index:
-```
-docker pull heyimwill/docker-mariadb
-```
-You can also build the image yourself right from this repo:
+For some reason this container won't build on the Docker registry, so you'll have to build it yourself using this command:
 ```
 docker build -t mariadb-prod-0 github.com/heyimwill/docker-mariadb
 ```
