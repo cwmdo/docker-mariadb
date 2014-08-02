@@ -1,6 +1,6 @@
 #MariaDB (https://mariadb.org/)
 
-FROM phusion/baseimage:0.9.12
+FROM phusion/baseimage:0.9.10
 MAINTAINER William Dahlstrom <w.dahlstrom@me.com>
 
 # Generate UTF-8 lang files just in case
