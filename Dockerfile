@@ -31,6 +31,10 @@ RUN chmod +x /scripts/start.sh
 RUN chmod 644 /etc/mysql/my.cnf
 RUN touch /firstrun
 
+# Create directories
+RUN mkdir /logs
+RUN mkdir /data
+
 # Expose port 3306
 EXPOSE 3306
 
