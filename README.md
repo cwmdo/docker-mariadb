@@ -24,7 +24,7 @@ Not a fan of taking shortcuts, eh? Lets do it the good ol' way.
 
 For some reason this container won't build on the Docker registry, so you'll have to build it yourself using this command:
 ```
-docker build -t mariadb-prod-0 github.com/heyimwill/docker-mariadb
+docker build -t mariadb github.com/heyimwill/docker-mariadb
 ```
 
 ## Running
@@ -33,7 +33,7 @@ For this container to run at all, these environment variables need to be defined
 The final result looks something like this:
 
 ```
-docker run -d --name="mysql-prod-0" -p 3307:3306 -v /home/deploy/db/mysql-prod-0:/data -v /home/deploy/logs/mysql-prod-0:/logs -e USER="chuck" -e PASS="intersect" heyimwill/docker-mysql
+docker run -d --name="mysql-prod-0" -p 3307:3306 -v /home/deploy/db/mysql-prod-0:/data -v /home/deploy/logs/mysql-prod-0:/logs -e USER="chuck" -e PASS="intersect" mariadb
 ```
 
 ## Linking
