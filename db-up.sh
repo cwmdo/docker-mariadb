@@ -2,7 +2,7 @@
 
 # Configure settings here
 NAME="mysqsl-prod-0"
-PORT="3309"
+PORT="3306"
 HOSTSTORAGE="/home/deploy/db/mysql-prod-0"
 LOGSTORAGE="/home/deploy/logs/mysql-prod-0"
 
@@ -14,7 +14,7 @@ RCol="\e[0m"
 # Validate settings
 # Does the host storage directory exist? If not, let's create one
 if [ ! -d "$HOSTSTORAGE" ]; then
-  echo "${Yel}[Notice]${RCol} Host storage directory doesn't exist, creating it for you..."
+  echo -e "${Yel}[Notice]${RCol} Host storage directory doesn't exist, creating it for you..."
   mkdir -p $HOSTSTORAGE
 fi
 
