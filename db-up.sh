@@ -40,4 +40,4 @@ if [ $# -eq 0 ]; then
 fi
 
 # Inject our variables into the docker command and run it
-docker build -t mariadb github.com/heyimwill/docker-mariadb && docker run -d --name="$NAME" -p $PORT:3306 -v $HOSTSTORAGE:/data -v $LOGSTORAGE/logs -e USER="$1" -e PASS="$2" mariadb
+docker build -t mariadb github.com/heyimwill/docker-mariadb && docker run -d --name="$NAME" -p $PORT:3306 -v $HOSTSTORAGE:/data -v $LOGSTORAGE:/logs -e USER="$1" -e PASS="$2" mariadb
