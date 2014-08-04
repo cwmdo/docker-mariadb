@@ -18,7 +18,7 @@ RUN apt-get -qq update
 
 # Install MariaDB & inotify-tools
 RUN apt-get -y install inotify-tools
-RUN apt-get -y --force yes install mariadb-server
+RUN apt-get -y --force-yes install mariadb-server
 
 # Clean up apt when we're done
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
@@ -30,6 +30,10 @@ ADD scripts /scripts
 RUN chmod +x /scripts/start.sh
 RUN chmod 644 /etc/mysql/my.cnf
 RUN touch /firstrun
+
+# Create directories
+RUN mkdir /logs
+RUN mkdir /data
 
 # Expose port 3306
 EXPOSE 3306
